@@ -55,10 +55,13 @@ export function Register() {
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                <SelectLabel>Unit</SelectLabel>
+                <SelectLabel>UP3</SelectLabel>
                 <SelectItem value="Malang">Malang</SelectItem>
                 <SelectItem value="Mojokerto">Mojokerto</SelectItem>
-                <SelectItem value="Jombang">Kediri</SelectItem>
+              </SelectGroup>
+              <SelectGroup>
+                <SelectLabel>UID</SelectLabel>
+                <SelectItem value="Jawa Timur">Jawa Timur</SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>
