@@ -8,7 +8,14 @@ export interface allData {
   allFeeder: any;
 }
 
-export interface dataFeeder{
+export interface dataFeeder {
   Feeders : any;
   allFeeder: any;
+}
+
+export interface dataHealthIndex {
+  unit : any;
+  wilayah : any;
+  Feeders: any;
+  allFeeder : any;
 }
