@@ -23,14 +23,12 @@ export default async function HealthIndexPage() {
   const session = await getPageSession();
   const data = await getData(session?.user.unit, session?.user.wilayah);
 
-  const Feeders = new Set(data.allPenyulang.map((feeder: { PENYULANG: string; }) => feeder.PENYULANG))
   // const unit = session?.user.unit
   let unit = "UID"
   
   const dataHealthIndex = {
     unit: session?.user.unit,
     wilayah: session?.user.wilayah,
-    Feeders: Feeders,
     allFeeder: data.allPenyulang
   }
 

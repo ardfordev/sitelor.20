@@ -16,6 +16,5 @@ export interface dataFeeder {
 export interface dataHealthIndex {
   unit : any;
   wilayah : any;
-  Feeders: any;
   allFeeder : any;
 }
