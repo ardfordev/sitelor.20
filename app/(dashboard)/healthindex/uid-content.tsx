@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { dataHealthIndex } from '@/types/allData'
 import { Card, Grid, SearchSelect, SearchSelectItem, Title, Text } from '@tremor/react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { CountStatusGI, CountStatusULP, CountStatusUP3, SUMEnergiBeliGI, SUMEnergiBeliULP, SUMEnergiBeliUP3, SUMEnergiJualGI, SUMEnergiJualULP, SUMEnergiJualUP3, SUMLossGI, SUMLossULP, SUMLossUP3 } from '@/lib/utils';
 
 interface UIDContent {
   data : dataHealthIndex
@@ -18,135 +19,6 @@ export default function UIDContent({data} : UIDContent) {
   const ULPList = new Set(data.allFeeder.map((feeder: { ULP: string; }) => feeder.ULP))
   const GIList = new Set(data.allFeeder.map((feeder: { GI: string; }) => feeder.GI))
   const PenyulangList = new Set(data.allFeeder.map((feeder: { PENYULANG: string; }) => feeder.PENYULANG))
-
-  function CountStatusUP3(penyulang: any, status: string, up3: string): number {
-    let totalStatus = 0;
-    for (const item of penyulang) {
-      if (item.UP3 === up3) {
-        if (item.STATUS === status) {
-          totalStatus += 1;
-        }
-      }
-    }
-    return totalStatus;
-  }
-
-  function CountStatusULP(penyulang: any, status: string, ulp: string): number {
-    let totalStatus = 0;
-    for (const item of penyulang) {
-      if (item.ULP === ulp) {
-        if (item.STATUS === status) {
-          totalStatus += 1;
-        }
-      }
-    }
-    return totalStatus;
-  }
-  
-  function CountStatusGI(penyulang: any, status: string, gi: string): number {
-    let totalStatus = 0;
-    for (const item of penyulang) {
-      if (item.GI === gi) {
-        if (item.STATUS === status) {
-          totalStatus += 1;
-        }
-      }
-    }
-    return totalStatus;
-  }
-
-  function SUMEnergiBeliUP3(penyulang: any, up3: string): number {
-    let totalKWPangkal = 0;
-    for (const item of penyulang) {
-      if (item.UP3 === up3) {
-        totalKWPangkal += item.KW_PANGKAL;
-      }
-    }
-    return totalKWPangkal;
-  }
-  
-  function SUMEnergiBeliULP(penyulang: any, ulp: string): number {
-    let totalKWPangkal = 0;
-    for (const item of penyulang) {
-      if (item.ULP === ulp) {
-        totalKWPangkal += item.KW_PANGKAL;
-      }
-    }
-    return totalKWPangkal;
-  }
-  
-  function SUMEnergiBeliGI(penyulang: any, gi: string): number {
-    let totalKWPangkal = 0;
-    for (const item of penyulang) {
-      if (item.GI === gi) {
-        totalKWPangkal += item.KW_PANGKAL;
-      }
-    }
-    return totalKWPangkal;
-  }
-
-  function SUMEnergiJualUP3(penyulang: any, up3: string): number {
-    let totalKWUjung = 0;
-    for (const item of penyulang) {
-      if (item.UP3 === up3) {
-        totalKWUjung += item.KW_TENGAH;
-        totalKWUjung += item.KW_UJUNG;
-      }
-    }
-    return totalKWUjung;
-  }
-  
-  function SUMEnergiJualULP(penyulang: any, ulp: string): number {
-    let totalKWUjung = 0;
-    for (const item of penyulang) {
-      if (item.ULP === ulp) {
-        totalKWUjung += item.KW_TENGAH;
-        totalKWUjung += item.KW_UJUNG;
-      }
-    }
-    return totalKWUjung;
-  }
-  
-  function SUMEnergiJualGI(penyulang: any, gi: string): number {
-    let totalKWUjung = 0;
-    for (const item of penyulang) {
-      if (item.GI === gi) {
-        totalKWUjung += item.KW_TENGAH;
-        totalKWUjung += item.KW_UJUNG;
-      }
-    }
-    return totalKWUjung;
-  }
-  
-  function SUMLossUP3(penyulang: any, up3: string): number {
-    let totalLoss = 0;
-    for (const item of penyulang) {
-      if (item.UP3 === up3) {
-        totalLoss += item.GAP_KW;
-      }
-    }
-    return totalLoss;
-  }
-  
-  function SUMLossULP(penyulang: any, ulp: string): number {
-    let totalLoss = 0;
-    for (const item of penyulang) {
-      if (item.UP3 === ulp) {
-        totalLoss += item.GAP_KW;
-      }
-    }
-    return totalLoss;
-  }
-  
-  function SUMLossGI(penyulang: any, gi: string): number {
-    let totalLoss = 0;
-    for (const item of penyulang) {
-      if (item.GI === gi) {
-        totalLoss += item.GAP_KW;
-      }
-    }
-    return totalLoss;
-  }
 
   const totalEnergiBeliUP3 = SUMEnergiBeliUP3(data.allFeeder, valueUP3).toFixed(2);
   const totalEnergiBeliULP = SUMEnergiBeliULP(data.allFeeder, valueULP).toFixed(2);

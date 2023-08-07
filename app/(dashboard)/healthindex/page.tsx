@@ -24,7 +24,7 @@ export default async function HealthIndexPage() {
   const data = await getData(session?.user.unit, session?.user.wilayah);
 
   // const unit = session?.user.unit
-  let unit = "UID"
+  let unit = "ULP"
   
   const dataHealthIndex = {
     unit: session?.user.unit,
