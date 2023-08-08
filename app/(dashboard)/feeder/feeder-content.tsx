@@ -74,7 +74,7 @@ export default function FeederContent({data} : FeederContent) {
             </Card>
             <Card>
               <Metric>{chartdata[maxIndex].COSP_PANGKAL}</Metric>
-              <Title>WATT</Title>
+              <Title>‎</Title>
             </Card>
           </Flex>
           <LineChart
@@ -99,7 +99,7 @@ export default function FeederContent({data} : FeederContent) {
             </Card>
             <Card>
               <Metric>{chartdata[maxIndex].COSP_TENGAH}</Metric>
-              <Title>WATT</Title>
+              <Title>‎</Title>
             </Card>
           </Flex>
           <LineChart
@@ -124,7 +124,7 @@ export default function FeederContent({data} : FeederContent) {
             </Card>
             <Card>
               <Metric>{chartdata[maxIndex].COSP_UJUNG}</Metric>
-              <Title>WATT</Title>
+              <Title>‎</Title>
             </Card>
           </Flex>
           <LineChart
